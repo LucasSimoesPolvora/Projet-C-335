@@ -20,37 +20,19 @@
                 </LinearGradientBrush>
             </Frame.Background>
         </Frame>
-        
-       
 
         <Frame Grid.Row="0"
                Margin="0,170,400,0"
                Padding="0"
                Rotation="-7"
                HeightRequest="100"
-               WidthRequest="300"
+               WidthRequest="200"
                CornerRadius="125"
                BackgroundColor="{StaticResource Background}"
                BorderColor="{StaticResource Background}">
             
         </Frame>
-        <Frame Grid.Row="0" 
-Margin="0,-80,300,0"
-Padding="0"
-Rotation="-135"
-HeightRequest="200"
-WidthRequest="250"
-CornerRadius="190"
-        BorderColor="{StaticResource Clouds}">
-            <Frame.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStopCollection>
-                        <GradientStop Offset="1" Color="{StaticResource Clouds}"/>
-                        <GradientStop Offset="0" Color="{StaticResource CloudsEnd}"/>
-                    </GradientStopCollection>
-                </LinearGradientBrush>
-            </Frame.Background>
-        </Frame>
+        
 
         <Frame Grid.Row="0" 
                Margin="0,1410,-0,0"
