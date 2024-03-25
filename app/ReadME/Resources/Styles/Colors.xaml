@@ -10,7 +10,12 @@
     <Color x:Key="Clouds">#15202B</Color>
     <Color x:Key="CloudsEnd">#4A6076</Color>
     <Color x:Key="Text">#867878</Color>
-    <Color x:Key="inputBackground">#F5F4F2</Color>
+    <Color x:Key="InputColorBackground">#F5F4F2</Color>
+    <Color x:Key="InputColorText">#333333</Color>
+    <Color x:Key="ButtonBackgroundColor1">#241C1C</Color>
+    <Color x:Key="ButtonBackgroundColor2">#C8C4B7</Color>
+    <Color x:Key="TextColor">#808080</Color>
+    <Color x:Key="HighlightColor">#FF6B6B</Color>
 
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="PrimaryDark">#ac99ea</Color>
