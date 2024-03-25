@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ReadME.LoginPage"
+             Shell.NavBarIsVisible="false"
              Title="LoginPage">
     <Grid RowDefinitions="1*,8*,1*" BackgroundColor="{StaticResource Background}">
         <Frame Grid.Row="0" 
                Margin="0,80,-110,0"
                Padding="0"
                Rotation="10"
-               HeightRequest="400"
+               HeightRequest="540"
                WidthRequest="450"
                CornerRadius="190">
             <Frame.Background>
@@ -51,7 +52,7 @@
             </Frame.Background>
         </Frame>
         <Frame Grid.Row="0" 
-               Margin="0,1580,-510,0"
+               Margin="0,1680,-510,0"
                Padding="0"
                Rotation="-5"
                HeightRequest="150"
@@ -59,7 +60,74 @@
                CornerRadius="250"
                BackgroundColor="{StaticResource Background}"
                BorderColor="{StaticResource Background}">
-            
+        </Frame>
+
+
+        <Frame Grid.Row="0" 
+               Margin="0,400,0,0"
+               Padding="0,15,0,0"
+               Rotation="0"
+               HeightRequest="110"
+               BackgroundColor="#00000000"
+               BorderColor="#00000000"
+               HorizontalOptions="Center">
+            <Label FontSize="50" TextColor="{StaticResource Text}" FontAttributes="Bold">Log In</Label>
+        </Frame>
+        
+        <Frame BackgroundColor="{StaticResource InputColorBackground}"
+               Grid.Row="1"
+               VerticalOptions="CenterAndExpand"
+               Margin="40,-150,40,0"
+               Padding="20,13,20,0"
+               HeightRequest="70"
+               CornerRadius="100">
+            <VerticalStackLayout>
+                <Entry Placeholder="Email" Grid.Column="1" FontAttributes="Bold" FontSize="15"></Entry>
+            </VerticalStackLayout>
+        </Frame>
+        <Frame BackgroundColor="{StaticResource InputColorBackground}"
+               Grid.Row="1"
+               VerticalOptions="CenterAndExpand"
+               Margin="40,50,40,0"
+               Padding="20,13,20,0"
+               HeightRequest="70"
+               CornerRadius="100">
+            <VerticalStackLayout>
+                <Entry Placeholder="Password" Grid.Column="1" FontAttributes="Bold" FontSize="15" TextColor="{StaticResource InputColorText}"></Entry>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button CornerRadius="60"
+                HeightRequest="60"
+                WidthRequest="320"
+                Text="LOG IN"
+                FontSize="20"
+                Margin="0,1000,0,0"
+                BackgroundColor="{StaticResource ButtonBackgroundColor1}"
+                BorderColor="Transparent"
+                TextColor="{StaticResource InputColorBackground}"/>
+
+        <Button CornerRadius="60"
+                HeightRequest="60"
+                WidthRequest="320"
+                Text="SIGN UP"
+                FontSize="20"
+                Margin="0,1150,0,0"
+                BackgroundColor="{StaticResource ButtonBackgroundColor2}"
+                BorderColor="Transparent"
+                TextColor="{StaticResource ButtonBackgroundColor1}"/>
+
+        <Frame Grid.Row="0" 
+               Margin="0,1330,0,0"
+               Padding="0,15,0,0"
+               Rotation="0"
+               HeightRequest="110"
+               BackgroundColor="#00000000"
+               BorderColor="#00000000"
+               HorizontalOptions="Center">
+            <Label FontSize="18" 
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource ButtonBackgroundColor1}">Forgot password ?</Label>
         </Frame>
     </Grid>
 </ContentPage>
