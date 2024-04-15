@@ -71,7 +71,7 @@
            BackgroundColor="#00000000"
            BorderColor="#00000000"
            HorizontalOptions="Center">
-            <Label FontSize="50" TextColor="{StaticResource Text}" FontAttributes="Bold">SIGN UP</Label>
+            <Label FontSize="50" TextColor="{StaticResource Text}" FontAttributes="Bold">Sign Up</Label>
         </Frame>
 
         <Frame BackgroundColor="{StaticResource InputColorBackground}"
@@ -105,7 +105,8 @@
             Margin="0,1000,0,0"
             BackgroundColor="{StaticResource ButtonBackgroundColor1}"
             BorderColor="Transparent"
-            TextColor="{StaticResource InputColorBackground}"/>
+            TextColor="{StaticResource InputColorBackground}"
+            Clicked="OnSignupClicked"/>
 
         <Button CornerRadius="60"
             HeightRequest="60"
@@ -115,6 +116,7 @@
             Margin="0,1150,0,0"
             BackgroundColor="{StaticResource ButtonBackgroundColor2}"
             BorderColor="Transparent"
-            TextColor="{StaticResource ButtonBackgroundColor1}"/>
+            TextColor="{StaticResource ButtonBackgroundColor1}"
+            Clicked="OnLoginClicked"/>
     </Grid>
 </ContentPage>

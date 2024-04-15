@@ -105,7 +105,8 @@
                 Margin="0,1000,0,0"
                 BackgroundColor="{StaticResource ButtonBackgroundColor1}"
                 BorderColor="Transparent"
-                TextColor="{StaticResource InputColorBackground}"/>
+                TextColor="{StaticResource InputColorBackground}"
+                Clicked="OnLoginClicked"/>
 
         <Button CornerRadius="60"
                 HeightRequest="60"
@@ -115,7 +116,8 @@
                 Margin="0,1150,0,0"
                 BackgroundColor="{StaticResource ButtonBackgroundColor2}"
                 BorderColor="Transparent"
-                TextColor="{StaticResource ButtonBackgroundColor1}"/>
+                TextColor="{StaticResource ButtonBackgroundColor1}"
+                Clicked="OnSignupClicked"/>
 
         <Frame Grid.Row="0" 
                Margin="0,1330,0,0"
