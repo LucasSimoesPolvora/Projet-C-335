@@ -1,0 +1,25 @@
+{
+  "name": "p_web_295",
+  "version": "1.0.0",
+  "description": "API REST - Project WEB 295",
+  "main": "src/app.mjs",
+  "scripts": {
+    "start": "nodemon src/app.mjs"
+  },
+  "author": "Ethan Schafstall, Lucas Simões Pólvora",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.2",
+    "sequelize": "^6.37.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "vitest": "^1.3.1"
+  }
+}
