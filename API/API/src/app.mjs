@@ -4,6 +4,8 @@ import { success } from "./routers/helper.mjs";
 import swaggerUi from "swagger-ui-express";
 import { swaggerSpec } from "./swagger.mjs";
 
+import { initDb } from './db/sequelize.mjs';
+
 
 /**
  * Importing the book routers
@@ -52,6 +54,7 @@ const app = express();
 app.use(express.json());
 const port = 3000;
 
+initDb()
 
 /**
  * Handles GET requests to the root endpoint ("/").

@@ -8,6 +8,7 @@ let books = [
     booAvgRating: 4.0,
     booCoverImage: "https://2.bp.blogspot.com/-PXvELHryl4s/V7NmWWOG_DI/AAAAAAAAAzA/u-W2uKmHXVwMVZ_F6eYufsSdr361q06zQCLcB/s1600/AffaireCharlesDexterWard.jpg",
     booPublishDate: new Date(),
+    booEpub: '',
     fk_user: 1,
     fk_publisher: 1,
     fk_category: 1,
@@ -21,6 +22,7 @@ let books = [
     booAvgRating: 2.5,
     booCoverImage: "https://th.bing.com/th/id/R.f999471f51eab473baa6fe5cf40a7f32?rik=CACwXQt6ldAzHQ&pid=ImgRaw&r=0",
     booPublishDate: "2023-05-15",
+    booEpub: '',
     fk_user: 1,
     fk_publisher: 2,
     fk_category: 2
@@ -34,6 +36,7 @@ let books = [
     booAvgRating: 5,
     booCoverImage: "https://th.bing.com/th/id/R.47f2f234b979e69ae71cefb32c768bc2?rik=sURF7fkPdAtjdw&pid=ImgRaw&r=0",
     booPublishDate: 1890,
+    booEpub: '',
     fk_user: 1,
     fk_publisher: 3,
     fk_category: 3

@@ -16,9 +16,9 @@ const bookModel = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(100),
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le titre est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le titre est requis",
+                    // },
                     len: {
                         args: [1, 100],
                         msg: "Le titre doit comporter entre 1 et 100 caractères",
@@ -29,9 +29,9 @@ const bookModel = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le nombre de pages est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le nombre de pages est requis",
+                    // },
                     min: {
                         args: [1],
                         msg: "Le nombre de pages doit être supérieur à 0",
@@ -84,34 +84,37 @@ const bookModel = (sequelize, DataTypes) => {
                 type: DataTypes.DATE,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "La date de publication est requise",
-                    },
+                    // notNull: {
+                    //     msg: "La date de publication est requise",
+                    // },
                     isDate: {
                         msg: "La date de publication doit être une date valide",
                     },
                 },
             },
             booEpub : {
-                type: DataTypes.BLOB,
-                
+                type: DataTypes.BLOB('long'),
+                allowNull: true,
+                validate: {
+                    
+                }          
             },
             fk_user: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "L'identifiant de l'utilisateur est requis",
-                    },
+                    // notNull: {
+                    //     msg: "L'identifiant de l'utilisateur est requis",
+                    // },
                 },
             },
             fk_publisher: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "L'identifiant de l'éditeur est requis",
-                    },
+                    // notNull: {
+                    //     msg: "L'identifiant de l'éditeur est requis",
+                    // },
                 },
             },
         }
@@ -126,27 +129,27 @@ const reviewModel = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "L'identifiant de l'utilisateur est requis",
-                    },
+                    // notNull: {
+                    //     msg: "L'identifiant de l'utilisateur est requis",
+                    // },
                 },
             },
             fk_book: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "L'identifiant du livre est requis",
-                    },
+                    // notNull: {
+                    //     msg: "L'identifiant du livre est requis",
+                    // },
                 },
             },
             revDate: {
                 type: DataTypes.DATE,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "La date de l'avis est requise",
-                    },
+                    // notNull: {
+                    //     msg: "La date de l'avis est requise",
+                    // },
                 },
             },
             revComment: {
@@ -162,9 +165,9 @@ const reviewModel = (sequelize, DataTypes) => {
                 type: DataTypes.DECIMAL(3, 2),
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "La note est requise",
-                    },
+                    // notNull: {
+                    //     msg: "La note est requise",
+                    // },
                     min: {
                         args: [0],
                         msg: "La note doit être d'au moins 0",
@@ -192,9 +195,9 @@ const userModel = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(50),
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le pseudo est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le pseudo est requis",
+                    // },
                     len: {
                         args: [1, 50],
                         msg: "Le pseudo doit comporter entre 1 et 50 caractères",
@@ -205,18 +208,18 @@ const userModel = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(),
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le mot de passe est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le mot de passe est requis",
+                    // },
                 },
             },
             useJoinDate: {
                 type: DataTypes.DATEONLY,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "La date d'inscription est requise",
-                    },
+                    // notNull: {
+                    //     msg: "La date d'inscription est requise",
+                    // },
                     isDate: {
                         msg: "La date d'inscription doit être une date valide",
                     },
@@ -226,18 +229,18 @@ const userModel = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le nombre de livres est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le nombre de livres est requis",
+                    // },
                 },
             },
             useReviewCount: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le nombre d'avis est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le nombre d'avis est requis",
+                    // },
                 },
             },
         }
@@ -253,9 +256,9 @@ const wroteModel = (sequelize, DataTypes) => {
                 primaryKey: true,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "L'ID de l'auteur est requis",
-                    },
+                    // notNull: {
+                    //     msg: "L'ID de l'auteur est requis",
+                    // },
                 },
             },
             fk_book: {
@@ -263,9 +266,9 @@ const wroteModel = (sequelize, DataTypes) => {
                 primaryKey: true,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "L'ID du livre est requis",
-                    },
+                    // notNull: {
+                    //     msg: "L'ID du livre est requis",
+                    // },
                 },
             }, 
         },
@@ -284,9 +287,9 @@ const categorizeModel = (sequelize, DataTypes) => {
                 primaryKey: true,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "L'ID du categorie est requis",
-                    },
+                    // notNull: {
+                    //     msg: "L'ID du categorie est requis",
+                    // },
                 },
             },
             fk_book: {
@@ -294,9 +297,9 @@ const categorizeModel = (sequelize, DataTypes) => {
                 primaryKey: true,
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "L'ID du livre est requis",
-                    },
+                    // notNull: {
+                    //     msg: "L'ID du livre est requis",
+                    // },
                 },
             }, 
         },
@@ -319,9 +322,9 @@ const publisherModel = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(50),
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le nom de l'éditeur est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le nom de l'éditeur est requis",
+                    // },
                     len: {
                         args: [1, 50],
                         msg: "Le nom de l'éditeur doit comporter entre 1 et 50 caractères",
@@ -345,9 +348,9 @@ const categoryModel = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(50),
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le nom de la catégorie est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le nom de la catégorie est requis",
+                    // },
                     len: {
                         args: [1, 50],
                         msg: "Le nom de la catégorie doit comporter entre 1 et 50 caractères",
@@ -372,9 +375,9 @@ const authorModel = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(50),
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le prénom de l'auteur est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le prénom de l'auteur est requis",
+                    // },
                     len: {
                         args: [1, 50],
                         msg: "Le prénom de l'auteur doit comporter entre 1 et 50 caractères",
@@ -385,9 +388,9 @@ const authorModel = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(50),
                 allowNull: false,
                 validate: {
-                    notNull: {
-                        msg: "Le nom de famille de l'auteur est requis",
-                    },
+                    // notNull: {
+                    //     msg: "Le nom de famille de l'auteur est requis",
+                    // },
                     len: {
                         args: [1, 50],
                         msg: "Le nom de famille de l'auteur doit comporter entre 1 et 50 caractères",
