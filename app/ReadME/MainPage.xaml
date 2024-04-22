@@ -4,7 +4,6 @@
              x:Class="ReadME.MainPage">
 
     <ScrollView>
-        
-    </ScrollView>
 
+    </ScrollView>
 </ContentPage>
