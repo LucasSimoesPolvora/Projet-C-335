@@ -1,4 +1,5 @@
-﻿using System.IO.Compression;
+﻿using System.Diagnostics;
+using System.IO.Compression;
 using System.Xml;
 
 namespace ReadME
@@ -18,13 +19,16 @@ namespace ReadME
             try
             {
                 //Call API
-                var response = await client.GetAsync(endpoint.Text);
+                var response = await client.GetAsync("http://10.0.2.2:3000/api/books/1");
                 if (response.IsSuccessStatusCode)
                 {
                     var content = response.Content;
 
+                    Trace.WriteLine(content);
+
                     //Open epub ZIP
-                    ZipArchive archive = new ZipArchive(content.ReadAsStream());
+                    var bytes = content.ReadAsStream();
+                    ZipArchive archive = new ZipArchive(bytes);
                     var coverEntry = archive.GetEntry("OEBPS/Images/cover.png");
                     var coverStream = coverEntry.Open();
 

@@ -1,5 +1,5 @@
 import express from "express"; // Importing express for router creation
-import { Book } from "../../db/sequelize.mjs"; // Importing Book model from sequelize
+import { Epub } from "../../db/sequelize.mjs"; // Importing Book model from sequelize
 import { success } from "../helper.mjs"; // Importing success helper function
 import { auth } from "../../auth/auth.mjs"; // Importing auth middleware
 
@@ -121,18 +121,18 @@ const getBookRouter = express(); // Creating a new instance of express router
  */
 
 // Endpoint for getting a specific book by ID
-getBookRouter.get("/:id", auth, (req, res) => {
+getBookRouter.get("/:id", (req, res) => {
     // Finding the book by its primary key (ID)
-    Book.findByPk(req.params.id)
-        .then((book) => {
+    Epub.findByPk(req.params.id)
+        .then((e) => {
             // If the book doesn't exist, return 404 error
-            if(book === null){
+            if(e === null){
                 const message = `Le livre demandé n'existe pas. Merci de réessayer avec un autre identifiant.`
                 return res.status(404).json({ message })
             }
             // If the book exists, return success message along with the book data
-            const message = `Le livre dont l'id vaut ${book.id_book} a bien été récupéré`
-            res.json(success(message, book))
+            const message = `Le livre dont l'id vaut ${e.id_epub} a bien été récupéré`
+            res.json(success(message, epub))
         })
         .catch((error) => {
             // If an error occurs during the process, return a generic error message

@@ -15,6 +15,12 @@ let books = [
   },
 ];
 
+let epub = [
+  {
+    epub: `./Dickens, Charles - Oliver Twist.epub`
+  }
+]
+
 let authors = [
   {
     id_author: 1,
@@ -131,4 +137,4 @@ let reviews = [
 ]
 
 
-export { books, writers, publishers, categories, users, wrotes, reviews, authors }
+export { books, writers, publishers, categories, users, wrotes, reviews, authors, epub }

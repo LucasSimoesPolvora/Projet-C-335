@@ -14,7 +14,7 @@ const bookModel = (sequelize, DataTypes) => {
             },
             booTitle: {
                 type: DataTypes.STRING(100),
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     // notNull: {
                     //     msg: "Le titre est requis",
@@ -27,7 +27,7 @@ const bookModel = (sequelize, DataTypes) => {
             },
             booPageCount: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     // notNull: {
                     //     msg: "Le nombre de pages est requis",
@@ -82,7 +82,7 @@ const bookModel = (sequelize, DataTypes) => {
             },
             booPublishDate: {
                 type: DataTypes.DATE,
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     // notNull: {
                     //     msg: "La date de publication est requise",
@@ -101,7 +101,7 @@ const bookModel = (sequelize, DataTypes) => {
             },
             fk_user: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     // notNull: {
                     //     msg: "L'identifiant de l'utilisateur est requis",
@@ -110,12 +110,32 @@ const bookModel = (sequelize, DataTypes) => {
             },
             fk_publisher: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     // notNull: {
                     //     msg: "L'identifiant de l'éditeur est requis",
                     // },
                 },
+            },
+        }
+    );
+};
+
+const epubModel = (sequelize, DataTypes) => {
+    return sequelize.define(
+        "t_epub",
+        {
+            id_epub: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+            },
+            epub : {
+                type: DataTypes.BLOB('long'),
+                allowNull: true,
+                validate: {
+                    
+                }          
             },
         }
     );
@@ -285,7 +305,7 @@ const categorizeModel = (sequelize, DataTypes) => {
             fk_category: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     // notNull: {
                     //     msg: "L'ID du categorie est requis",
@@ -295,7 +315,7 @@ const categorizeModel = (sequelize, DataTypes) => {
             fk_book: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     // notNull: {
                     //     msg: "L'ID du livre est requis",
@@ -401,4 +421,4 @@ const authorModel = (sequelize, DataTypes) => {
     );
 };
 
-export { bookModel, reviewModel, userModel, wroteModel, publisherModel, categoryModel, authorModel, categorizeModel };
+export { bookModel, reviewModel, userModel, wroteModel, publisherModel, categoryModel, authorModel, categorizeModel, epubModel };

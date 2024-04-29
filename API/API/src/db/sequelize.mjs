@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize";
-import { books, users } from "./mock-data.mjs";
-import { bookModel, reviewModel, userModel, wroteModel, publisherModel, categoryModel, authorModel, categorizeModel } from "../models/db_books.mjs";
+import { books, epub } from "./mock-data.mjs";
+import { bookModel, reviewModel, userModel, wroteModel, publisherModel, categoryModel, authorModel, categorizeModel, epubModel } from "../models/db_books.mjs";
 
 /**
  * Establishes a connection to the MySQL database using Sequelize.
@@ -32,26 +32,15 @@ let initDb = () => {
     return sequelize
                 .sync({force: true})
                 .then((_) => {
-                    importBook()
+                    importEpub()
                     console.log("La base de données a bien été synchronisée")
                 })
 }
 
-let importBook = () => {
-    books.map((book) => {
-        Book.create({
-            id_book: book.id_book,
-            booTitle: book.booTitle,
-            booPageCount: book.booPageCount,
-            booExcerpt: book.booExcerpt,
-            booSummary: book.booSummary,
-            booAvgRating: book.booAvgRating,
-            booCoverImage: book.booCoverImage,
-            booPublishDate: book.booPublishDate,
-            booEpub: book.booEpub,
-            fk_user: book.fk_user,
-            fk_publisher: book.fk_publisher,
-            fk_category: book.fk_category
+let importEpub = () => {
+    epub.map((e) => {
+        Epub.create({
+            epub: e.epub,
         })
     })
 }
@@ -70,5 +59,6 @@ const User = userModel(sequelize, DataTypes);
 const Wrote = wroteModel(sequelize, DataTypes);
 const Author = authorModel(sequelize, DataTypes);
 const Categorize = categorizeModel(sequelize, DataTypes);
+const Epub = epubModel(sequelize, DataTypes)
 
-export { initDb, sequelize, Book, Review, Publisher, Category, User, Wrote, Author, Categorize };
+export { initDb, sequelize, Book, Review, Publisher, Category, User, Wrote, Author, Categorize, Epub };
