@@ -12,13 +12,6 @@ public partial class AddBookPage : ContentPage
 
     private async void OnAddBookClicked(object sender, EventArgs e)
     {
-        // STATUS OK
-        /*PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Media>();
-        Console.WriteLine(status.ToString());
-        if (status != PermissionStatus.Granted)
-        {
-            await Permissions.RequestAsync<Permissions.Media>();
-        }*/
         try
         {
             var book = await FilePicker.PickAsync(new PickOptions
@@ -41,7 +34,5 @@ public partial class AddBookPage : ContentPage
         {
             Trace.Write(ex.ToString());
         }
-        
-
     }
 }
