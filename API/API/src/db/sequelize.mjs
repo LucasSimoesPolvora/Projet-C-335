@@ -48,7 +48,10 @@ let importBook = () => {
             booAvgRating: book.booAvgRating,
             booCoverImage: book.booCoverImage,
             booPublishDate: book.booPublishDate,
-            booEpub: book.booEpub
+            booEpub: book.booEpub,
+            fk_user: book.fk_user,
+            fk_publisher: book.fk_publisher,
+            fk_category: book.fk_category
         })
     })
 }
