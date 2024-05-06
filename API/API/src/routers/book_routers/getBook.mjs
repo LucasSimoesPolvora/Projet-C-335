@@ -132,7 +132,7 @@ getBookRouter.get("/:id", (req, res) => {
             }
             // If the book exists, return success message along with the book data
             const message = `Le livre dont l'id vaut ${e.id_epub} a bien été récupéré`
-            res.json(success(message, epub))
+            res.json(success(message, e.epub))
         })
         .catch((error) => {
             // If an error occurs during the process, return a generic error message

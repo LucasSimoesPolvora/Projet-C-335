@@ -93,7 +93,7 @@ const bookModel = (sequelize, DataTypes) => {
                 },
             },
             booEpub : {
-                type: DataTypes.BLOB('long'),
+                type: DataTypes.TEXT('long'),
                 allowNull: true,
                 validate: {
                     
