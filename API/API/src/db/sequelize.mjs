@@ -56,7 +56,7 @@ let importBooks = () => {
             booAvgRating: book.booAvgRating,
             booCoverImage: book.booCoverImage,
             booPublishDate: book.booPublishDate,
-            booEpub: book.booAuthor.Epub,
+            booEpub: book.booEpub,
             booAuthor: book.booAuthor
         })
     })

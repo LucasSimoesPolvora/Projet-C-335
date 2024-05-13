@@ -99,24 +99,13 @@ const bookModel = (sequelize, DataTypes) => {
                     
                 }            
             },
-            fk_user: {
-                type: DataTypes.INTEGER,
+            booAuthor: {
+                type: DataTypes.STRING(100),
                 allowNull: true,
                 validate: {
-                    // notNull: {
-                    //     msg: "L'identifiant de l'utilisateur est requis",
-                    // },
-                },
-            },
-            fk_publisher: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-                validate: {
-                    // notNull: {
-                    //     msg: "L'identifiant de l'éditeur est requis",
-                    // },
-                },
-            },
+                    
+                }       
+            }
         }
     );
 };
