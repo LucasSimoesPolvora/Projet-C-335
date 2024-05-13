@@ -15,40 +15,6 @@ import { getBookRouter } from "./routers/book_routers/getBook.mjs"
 import { deleteBookRouter } from "./routers/book_routers/deleteBook.mjs"
 import { createBookRouter } from "./routers/book_routers/createBook.mjs"
 import { updateBookRouter } from "./routers/book_routers/updateBook.mjs"
-import { getBooksByUserRouter } from "./routers/book_routers/getBooksByUser.mjs";
-import { getBooksByCategoryRouter } from "./routers/book_routers/getBooksByCategory.mjs";
-import { getBooksByAuthor } from "./routers/book_routers/getBooksByAuthor.mjs";
-
-/**
- * Importing the review routers
- */
-import { getReviewsByBookRouter} from "./routers/review_routers/getReviewsByBook.mjs"
-import { createReviewRouter } from "./routers/review_routers/createReview.mjs";
-import { getReviewsByUserRouter } from "./routers/review_routers/getReviewsByUser.mjs";
-
-/**
- * Importing the categories router
- */
-import { getAllCategoriesRouter } from "./routers/category_routers/getAllCategories.mjs";
-import { getCategoryRouter } from "./routers/category_routers/getCategory.mjs";
-
-/**
- * Importing the authors router
- */
-import { getAllAuthorsRouter } from "./routers/author_routers/getAllAuthors.mjs";
-import { getAuthorRouter } from "./routers/author_routers/getAuthor.mjs";
-
-
-/**
- * Importing the publishers routes
- */
-import { getAllPublishersRouter } from "./routers/publisher_routers/getAllPublishers.mjs";
-import { getPublisherRouter } from "./routers/publisher_routers/getPublisher.mjs";
-
-/**
- * Importing the login router
- */
-import { loginRouter } from "./routers/login_routers/login.mjs";
 
 const app = express();
 app.use(express.json());
@@ -107,40 +73,7 @@ app.use("/api/books", getAllBooksRouter)
 app.use("/api/books", getBookRouter)
 app.use("/api/books", deleteBookRouter)
 app.use("/api/books", createBookRouter)
-app.use("/api/books", updateBookRouter)
-app.use("/api/users", getBooksByUserRouter)
-app.use("/api/authors", getBooksByAuthor)
-app.use("/api/categories", getBooksByCategoryRouter)
 
-/**
- * Mounts routers for the reviews of the API 
- */
-app.use("/api/books", getReviewsByBookRouter)
-app.use("/api/books", createReviewRouter)
-app.use("/api/users", getReviewsByUserRouter)
-
-/**
- * Mounts routers for the categories of the API 
- */
-app.use("/api/categories", getAllCategoriesRouter)
-app.use("/api/categories", getCategoryRouter)
-
-/**
- * Mounts routers for the authors of the API 
- */
-app.use("/api/authors", getAllAuthorsRouter)
-app.use("/api/authors", getAuthorRouter)
-
-/**
- *  Mounts routers for the publishers of the API
- */
-app.use("/api/publishers", getAllPublishersRouter)
-app.use("/api/publishers", getPublisherRouter)
-
-/**
- * Mounts routers for the login of the API 
- */
-app.use("/api/login", loginRouter)
 
 
 /**
