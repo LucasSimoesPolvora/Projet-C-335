@@ -24,16 +24,17 @@ namespace ReadME
                 {
                     var content = response.Content;
 
-                    Trace.WriteLine(content);
-
+                    Debug.WriteLine(content);
                     //Open epub ZIP
                     var bytes = content.ReadAsStream();
+
+                    Console.Write("");
                     ZipArchive archive = new ZipArchive(bytes);
                     var coverEntry = archive.GetEntry("OEBPS/Images/cover.png");
                     var coverStream = coverEntry.Open();
 
                     //Attach cover to UI
-                    cover.Source = ImageSource.FromStream(() => coverStream);
+                    //  cover.Source = ImageSource.FromStream(() => coverStream);
 
                     //Load CONTENT (meta data)
                     var bookTitle = "not found";
@@ -62,7 +63,7 @@ namespace ReadME
                         bookTitle = (start != -1 && end != -1) ? contentString.Substring(start, end - start) : "Title node not found.";
                         #endregion
                     }
-                    title.Text = bookTitle;
+                    //title.Text = bookTitle;
 
                 }
                 else

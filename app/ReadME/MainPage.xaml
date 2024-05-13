@@ -4,7 +4,7 @@
              x:Class="ReadME.MainPage">
     <VerticalStackLayout>
         <Entry x:Name="endpoint" WidthRequest="300"
-            Text="http://10.0.2.2:3000/epub/1"
+            Text="http://10.0.2.2:3000/api/books/1"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
