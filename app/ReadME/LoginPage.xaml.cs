@@ -14,6 +14,6 @@ public partial class LoginPage : ContentPage
 
     private void OnLoginClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new MainPage());
+        Navigation.PushAsync(new DisplayAllBooksPage());
     }
 }

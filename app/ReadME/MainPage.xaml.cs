@@ -26,15 +26,18 @@ namespace ReadME
 
                     Debug.WriteLine(content);
                     //Open epub ZIP
-                    var bytes = content.ReadAsStream();
+                    var json = new StreamReader(content.ReadAsStream()).ReadToEnd();
+
+                    string b64 = json.Split("\"booEpub\":\"")[1].Split("\",\"")[0].Replace("\\n","").Replace(" ","").Trim();
+                    var bytes = Convert.FromBase64String(b64);
 
                     Console.Write("");
-                    ZipArchive archive = new ZipArchive(bytes);
+                    ZipArchive archive = new ZipArchive(new MemoryStream(bytes));
                     var coverEntry = archive.GetEntry("OEBPS/Images/cover.png");
                     var coverStream = coverEntry.Open();
 
                     //Attach cover to UI
-                    //  cover.Source = ImageSource.FromStream(() => coverStream);
+                    cover.Source = ImageSource.FromStream(() => coverStream);
 
                     //Load CONTENT (meta data)
                     var bookTitle = "not found";
@@ -57,10 +60,7 @@ namespace ReadME
                     else
                     {
                         #region plain text version
-                        int start = contentString.IndexOf("<dc:title>") + 10;
-                        int end = contentString.IndexOf("</dc:title>");
-
-                        bookTitle = (start != -1 && end != -1) ? contentString.Substring(start, end - start) : "Title node not found.";
+                        
                         #endregion
                     }
                     //title.Text = bookTitle;

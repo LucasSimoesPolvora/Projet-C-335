@@ -101,7 +101,7 @@ const getAllBooksRouter = express(); // Creating a new instance of express route
  */
  
 // Endpoint for getting all books
-getAllBooksRouter.get("/", auth, (req, res) => {
+getAllBooksRouter.get("/", (req, res) => {
     // Get all books
     Book.findAll()
         .then((book) => {
